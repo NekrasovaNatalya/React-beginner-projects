@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const User = ({ id, email, first_name, last_name, avatar }) => (
+export const User = ({ id, email, first_name, last_name, avatar, onClickInvite, isInvited }) => (
   <li>
     <div>
       <img className="avatar" src={avatar} alt="User" />
@@ -14,6 +14,7 @@ export const User = ({ id, email, first_name, last_name, avatar }) => (
         </p>
       </div>
     </div>
-    <p className="action plus">+</p>
+    <img onClick={() => onClickInvite(id)} className="action" src={`${isInvited ? 'https://cdn-icons-png.flaticon.com/512/1103/1103447.png?w=826&t=st=1687346102~exp=1687346702~hmac=d6b49bce7871f9363372b6a9e6eeac86239db1309f9ab1365813b09961fabbc4' : 'https://cdn-icons-png.flaticon.com/512/1250/1250544.png?w=826&t=st=1687346187~exp=1687346787~hmac=88bb06e633bddd5c3428194f3657936f67efa7960aaaa4bee295d5413eb696d6'}`} alt="Action" />
+    {/* <p onClick={onClickInvite} className="action plus">+</p> */}
   </li>
 );
